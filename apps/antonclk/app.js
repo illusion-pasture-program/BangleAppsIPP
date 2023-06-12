@@ -1,55 +1,91 @@
-// Clock with large digits using the "Anton" bold font
-Graphics.prototype.setFontAnton = function(scale) {
-  // Actual height 69 (68 - 0)
-  g.setFontCustom(atob("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf/gAAAAAAAAAAf/gAAAAAAAAAAf/gAAAAAAAAAAf/gAAAAAAAAAAf/gAAAAAAAAAAf/gAAAAAAAAAAf/gAAAAAAAAAAf/gAAAAAAAAAAf/gAAAAAAAAAAf/gAAAAAAAAAAf/gAAAAAAAAAAf/gAAAAAAAAAAf/gAAAAAAAAAAf/gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgAAAAAAAAAAA/gAAAAAAAAAAP/gAAAAAAAAAH//gAAAAAAAAB///gAAAAAAAAf///gAAAAAAAP////gAAAAAAD/////gAAAAAA//////gAAAAAP//////gAAAAH///////gAAAB////////gAAAf////////gAAP/////////gAD//////////AA//////////gAA/////////4AAA////////+AAAA////////gAAAA///////wAAAAA//////8AAAAAA//////AAAAAAA/////gAAAAAAA////4AAAAAAAA///+AAAAAAAAA///gAAAAAAAAA//wAAAAAAAAAA/8AAAAAAAAAAA/AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////AAAAAB///////8AAAAH////////AAAAf////////wAAA/////////4AAB/////////8AAD/////////+AAH//////////AAP//////////gAP//////////gAP//////////gAf//////////wAf//////////wAf//////////wAf//////////wA//8AAAAAB//4A//wAAAAAAf/4A//gAAAAAAP/4A//gAAAAAAP/4A//gAAAAAAP/4A//wAAAAAAf/4A///////////4Af//////////wAf//////////wAf//////////wAf//////////wAP//////////gAP//////////gAH//////////AAH//////////AAD/////////+AAB/////////8AAA/////////4AAAP////////gAAAD///////+AAAAAf//////4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/gAAAAAAAAAAP/gAAAAAAAAAAf/gAAAAAAAAAAf/gAAAAAAAAAAf/AAAAAAAAAAA//AAAAAAAAAAA/+AAAAAAAAAAB/8AAAAAAAAAAD//////////gAH//////////gAP//////////gA///////////gA///////////gA///////////gA///////////gA///////////gA///////////gA///////////gA///////////gA///////////gA///////////gA///////////gA///////////gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH/4AAAAB/gAAD//4AAAAf/gAAP//4AAAB//gAA///4AAAH//gAB///4AAAf//gAD///4AAA///gAH///4AAD///gAP///4AAH///gAP///4AAP///gAf///4AAf///gAf///4AB////gAf///4AD////gA////4AH////gA////4Af////gA////4A/////gA//wAAB/////gA//gAAH/////gA//gAAP/////gA//gAA///8//gA//gAD///w//gA//wA////g//gA////////A//gA///////8A//gA///////4A//gAf//////wA//gAf//////gA//gAf/////+AA//gAP/////8AA//gAP/////4AA//gAH/////gAA//gAD/////AAA//gAB////8AAA//gAA////wAAA//gAAP///AAAA//gAAD//8AAAA//gAAAP+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB/+AAAAAD/wAAB//8AAAAP/wAAB///AAAA//wAAB///wAAB//wAAB///4AAD//wAAB///8AAH//wAAB///+AAP//wAAB///+AAP//wAAB////AAf//wAAB////AAf//wAAB////gAf//wAAB////gA///wAAB////gA///wAAB////gA///w//AAf//wA//4A//AAA//wA//gA//AAAf/wA//gB//gAAf/wA//gB//gAAf/wA//gD//wAA//wA//wH//8AB//wA///////////gA///////////gA///////////gA///////////gAf//////////AAf//////////AAP//////////AAP/////////+AAH/////////8AAH///+/////4AAD///+f////wAAA///8P////gAAAf//4H///+AAAAH//gB///wAAAAAP4AAH/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/wAAAAAAAAAA//wAAAAAAAAAP//wAAAAAAAAB///wAAAAAAAAf///wAAAAAAAH////wAAAAAAA/////wAAAAAAP/////wAAAAAB//////wAAAAAf//////wAAAAH///////wAAAA////////wAAAP////////wAAA///////H/wAAA//////wH/wAAA/////8AH/wAAA/////AAH/wAAA////gAAH/wAAA///4AAAH/wAAA//+AAAAH/wAAA///////////gA///////////gA///////////gA///////////gA///////////gA///////////gA///////////gA///////////gA///////////gA///////////gA///////////gA///////////gA///////////gA///////////gAAAAAAAAH/4AAAAAAAAAAH/wAAAAAAAAAAH/wAAAAAAAAAAH/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//8AAA/////+B///AAA/////+B///wAA/////+B///4AA/////+B///8AA/////+B///8AA/////+B///+AA/////+B////AA/////+B////AA/////+B////AA/////+B////gA/////+B////gA/////+B////gA/////+A////gA//gP/gAAB//wA//gf/AAAA//wA//gf/AAAAf/wA//g//AAAAf/wA//g//AAAA//wA//g//gAAA//wA//g//+AAP//wA//g////////gA//g////////gA//g////////gA//g////////gA//g////////AA//gf///////AA//gf//////+AA//gP//////+AA//gH//////8AA//gD//////4AA//gB//////wAA//gA//////AAAAAAAH////8AAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////gAAAAB///////+AAAAH////////gAAAf////////4AAB/////////8AAD/////////+AAH//////////AAH//////////gAP//////////gAP//////////gAf//////////wAf//////////wAf//////////wAf//////////wAf//////////4A//wAD/4AAf/4A//gAH/wAAP/4A//gAH/wAAP/4A//gAP/wAAP/4A//gAP/4AAf/4A//wAP/+AD//4A///wP//////4Af//4P//////wAf//4P//////wAf//4P//////wAf//4P//////wAP//4P//////gAP//4H//////gAH//4H//////AAH//4D/////+AAD//4D/////8AAB//4B/////4AAA//4A/////wAAAP/4AP////AAAAB/4AD///4AAAAAAAAAH/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//AAAAAAAAAAA//gAAAAAAAAAA//gAAAAAAAAAA//gAAAAAAADgA//gAAAAAAP/gA//gAAAAAH//gA//gAAAAB///gA//gAAAAP///gA//gAAAD////gA//gAAAf////gA//gAAB/////gA//gAAP/////gA//gAB//////gA//gAH//////gA//gA///////gA//gD///////gA//gf///////gA//h////////gA//n////////gA//////////gAA/////////AAAA////////wAAAA///////4AAAAA///////AAAAAA//////4AAAAAA//////AAAAAAA/////4AAAAAAA/////AAAAAAAA////8AAAAAAAA////gAAAAAAAA///+AAAAAAAAA///4AAAAAAAAA///AAAAAAAAAA//4AAAAAAAAAA/+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//gB///wAAAAP//4H///+AAAA///8P////gAAB///+f////4AAD///+/////8AAH/////////+AAH//////////AAP//////////gAP//////////gAf//////////gAf//////////wAf//////////wAf//////////wA///////////wA//4D//wAB//4A//wB//gAA//4A//gA//gAAf/4A//gA//AAAf/4A//gA//gAAf/4A//wB//gAA//4A///P//8AH//4Af//////////wAf//////////wAf//////////wAf//////////wAf//////////gAP//////////gAP//////////AAH//////////AAD/////////+AAD///+/////8AAB///8f////wAAAf//4P////AAAAH//wD///8AAAAA/+AAf//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH//gAAAAAAAAB///+AA/+AAAAP////gA//wAAAf////wA//4AAB/////4A//8AAD/////8A//+AAD/////+A///AAH/////+A///AAP//////A///gAP//////A///gAf//////A///wAf//////A///wAf//////A///wAf//////A///wA///////AB//4A//4AD//AAP/4A//gAB//AAP/4A//gAA//AAP/4A//gAA/+AAP/4A//gAB/8AAP/4A//wAB/8AAf/4Af//////////wAf//////////wAf//////////wAf//////////wAf//////////wAP//////////gAP//////////gAH//////////AAH/////////+AAD/////////8AAB/////////4AAAf////////wAAAP////////AAAAB///////4AAAAAD/////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf/AAB/8AAAAAA//AAD/8AAAAAA//AAD/8AAAAAA//AAD/8AAAAAA//AAD/8AAAAAA//AAD/8AAAAAA//AAD/8AAAAAA//AAD/8AAAAAA//AAD/8AAAAAA//AAD/8AAAAAA//AAD/8AAAAAA//AAD/8AAAAAA//AAD/8AAAAAA//AAD/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="), 46, atob("EiAnGicnJycnJycnEw=="), 78 + (scale << 8) + (1 << 16));
-};
-
+// Importing required fonts
 require("Font7x11Numeric7Seg").add(Graphics);
-require("Font8x12").add(Graphics);
-require("FontDylex7x13").add(Graphics);
+require("FontHaxorNarrow7x17").add(Graphics);
 
+function getSeed() {
+  var now = new Date();
 
-{ // must be inside our own scope here so that when we are unloaded everything disappears
-  // we also define functions using 'let fn = function() {..}' for the same reason. function decls are global
-let drawTimeout;
+  var year = now.getFullYear();
+  var month = now.getMonth() + 1;
+  var date = now.getDate();
+  var hours = Math.round(now.getMinutes() / 60) + now.getHours();
 
-// Actually draw the watch face
-let draw = function() {
-  var x = g.getWidth() / 2;
-  var y = g.getHeight() / 2;  
-  g.reset().clearRect(Bangle.appRect); // clear whole background (w/o widgets)
-  var date = new Date();
-  var timeStr = require("locale").time(date, 1); // Hour and minute
-  //g.setFontAlign(0, 0).setFont("Anton").drawString(timeStr, x, y-12);
-  g.setFontAlign(0, -1).setFont("7x11Numeric7Seg",2.4).drawString(timeStr, x, 40);
-  
-  
-  // Show date and day of week
-  var dateStr = require("locale").date(date, 0).toUpperCase()+"\n"+
-                require("locale").dow(date, 0).toUpperCase(); 
-  g.setFontAlign(0, -1).setFont("Dylex7x13", 1).drawString(g.wrapString("For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life.", g.getWidth()).join("\n"), x, y);
-  
-
-
-  // queue next draw
-  if (drawTimeout) clearTimeout(drawTimeout);
-  drawTimeout = setTimeout(function() {
-    drawTimeout = undefined;
-    draw();
-  }, 60000 - (Date.now() % 60000));
-};
-
-// Show launcher when middle button pressed
-Bangle.setUI({
-  mode : "clock",
-  remove : function() {
-    // Called to unload all of the clock app
-    if (drawTimeout) clearTimeout(drawTimeout);
-    drawTimeout = undefined;
-    delete Graphics.prototype.setFontAnton;
-  }});
-// Load widgets
-Bangle.loadWidgets();
-draw();
-setTimeout(Bangle.drawWidgets,0);
+  var seed = year * 1000000 + month * 10000 + date * 100 + hours;
+  return seed;
 }
+
+function rndSeed(seed) {
+  var x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
+}
+
+function getRandomElementFromArray(array) {
+  var seed = getSeed();
+  var randomIndex = Math.floor(rndSeed(seed) * array.length);
+  return array[randomIndex];
+}
+
+// Encapsulating the clock functionality in an IIFE (Immediately Invoked Function Expression)
+// for avoiding global scope pollution and ensuring proper garbage collection when unloaded
+(function() {
+  let drawTimeout;
+
+  // Function to draw the clock face
+  let draw = function() {
+    // Get screen dimensions
+    const x = g.getWidth() / 2;
+    const xFull = g.getWidth();
+    const y = g.getHeight() / 2;
+
+    g.reset().clearRect(Bangle.appRect); // Clear whole background (w/o widgets)
+
+    const date = new Date();
+    const timeStr = require("locale").time(date, 1); // Get current time
+
+    // Draw time string in hours and minutes
+    g.setFontAlign(0, -1).setFont("7x11Numeric7Seg", 3).drawString(timeStr, x, 30);
+
+    // Draw seconds string
+    const seconds = date.getSeconds();
+    const formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
+    g.setFontAlign(0, -1).setFont("7x11Numeric7Seg", 1).drawString(formattedSeconds, xFull - 25, 33);
+
+    // Draw day of month
+    const dayOfMonth = date.getDate();
+    const formattedDayOfMonth = dayOfMonth < 10 ? "0" + dayOfMonth : dayOfMonth;
+    g.setFontAlign(0, -1).setFont("7x11Numeric7Seg", 1).drawString(formattedDayOfMonth, xFull - 25, 50);
+
+    // Bible Verses array
+    const bibleVerses = [
+      "For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life. (Jhn 3:16)",
+      "For all have sinned and fall short of the glory of God, and are justified by his grace as a gift, through the redemption that is in Christ Jesus. (Rom 3:23)",
+      "For by grace you have been saved through faith. And this is not your own doing; it is the gift of God, not a result of works, so that no one may boast. (Eph 2:8)",
+      "For as often as you eat this bread and drink the cup, you proclaim the Lord's death until he comes. (1Cr 11:26)"
+    ];
+
+    // Get a random Bible verse from the array
+    const randomVerse = getRandomElementFromArray(bibleVerses);
+
+    // Draw Bible Verse
+    g.setFontAlign(-1, -1).setFont("HaxorNarrow7x17", 1).drawString(g.wrapString(randomVerse, g.getWidth()).join("\n"), 0, y - 18);
+
+    // Queue next draw after one second
+    if (drawTimeout) clearTimeout(drawTimeout);
+    drawTimeout = setTimeout(draw, 1000 - (Date.now() % 1000));
+  };
+
+  // Handle middle button press to show launcher
+  Bangle.setUI({
+    mode: "clock",
+    remove: function () {
+      // Unload clock app
+      if (drawTimeout) clearTimeout(drawTimeout);
+      drawTimeout = undefined;
+    }
+  });
+
+  // Load widgets and draw clock
+  Bangle.loadWidgets();
+  draw();
+  setTimeout(Bangle.drawWidgets, 0);
+})();

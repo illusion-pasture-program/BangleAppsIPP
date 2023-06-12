@@ -16,3 +16,4 @@
       Modified to avoid leaving functions defined when using setUI({remove:...})
 0.12: Added message      
 0.13: Increase clock font size and added random Bible quotes that rotate every hour
+0.14: Added more verses

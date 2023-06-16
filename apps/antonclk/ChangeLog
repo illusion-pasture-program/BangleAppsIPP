@@ -18,3 +18,4 @@
 0.13: Increase clock font size and added random Bible quotes that rotate every hour
 0.14: Added more verses
 0.15: Added more verses, recentered clock, made refresh much more effecient. Text now only generated at the top of every hour rather than every second
+0.16: Corrected time color error.

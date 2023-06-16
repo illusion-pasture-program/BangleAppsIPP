@@ -109,7 +109,7 @@ const bibleVerses = [
 
     //g.reset().clearRect(Bangle.appRect); // Clear whole background (w/o widgets)
     g.clearRect(0,24,176,62); //Just clear the time. Makes it so the text generation logic only needs to run every hour.    
-    //g.setColor(0,0,0);
+    g.setColor(0,0,0);
 
     const date = new Date();
     const timeStr = require("locale").time(date, 1); // Get current time

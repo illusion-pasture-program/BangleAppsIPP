@@ -4,6 +4,11 @@ exports.music = {};
  * @param {object} msg
  */
 function emit(msg) {
+  // Check 'src' property of the msg object
+  if ((msg.src && msg.msg.src.includes("Your messages are available on the device"))) {
+    return;
+  }
+  
   let type = "text";
   if (["call", "music", "map"].includes(msg.id)) type = msg.id;
   if (msg.src && msg.src.toLowerCase().startsWith("alarm")) type = "alarm";

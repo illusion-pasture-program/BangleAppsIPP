@@ -5,3 +5,4 @@
 0.59: fixes message timeout by using setinterval, as it was intended. So the buzz is triggered every x seconds until the timeout occours.
 0.60: Bump version to allow new buzz.js module to be loaded - fixes memory/performance hog when buzz called
 0.61: Blocking "messages available on your phone" message.
+0.62: Blocking "messages available on your phone" message -- take two.

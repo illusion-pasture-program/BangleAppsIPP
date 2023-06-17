@@ -3,11 +3,11 @@ exports.music = {};
  * Emit "message" event with appropriate type from Bangle
  * @param {object} msg
  */
-function emit(msg) {
-  // Check 'src' property of the msg object
-  if ((msg.src && msg.msg.src.includes("Your messages are available on the device"))) {
-    return;
-  }
+function emit(msg) {  
+ // Check 'body' property of the msg object
+ if (msg.body === "Your messages are available on the device you've paired") {
+  return;
+}
   
   let type = "text";
   if (["call", "music", "map"].includes(msg.id)) type = msg.id;

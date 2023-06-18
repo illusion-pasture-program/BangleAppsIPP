@@ -56,7 +56,8 @@
         weather.drawIcon(w, this.x+10, this.y+8, 7.5);
       }
       if (w.temp) {
-        let t = require('locale').temp(w.temp-273.15);  // applies conversion
+        //let t = require('locale').temp(w.temp-273.15);  // applies conversion
+        let t = require('locale').temp((w.temp - 273.15) * 9/5 + 32); //applies conversion in freedom units
         t = t.match(/[\d\-]*/)[0]; // but we have no room for units
         g.reset();
         g.setFontAlign(0, 1); // center horizontally at bottom of widget

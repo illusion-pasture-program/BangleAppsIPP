@@ -4,13 +4,13 @@
   "shortName": "acctime",
   "version": "0.01",
   "description": "Set time accurately via gadgetbirdge.",
-  "icon": "calculator.png",
-  "screenshots": [{"url":"screenshot_calculator.png"}],
+  "icon": "accuratetime.png",
+  "screenshots": [{"url":"screenshot_accuratetime.png"}],
   "tags": "app,tool",
   "supports": ["BANGLEJS2"],
   "readme": "README.md",
   "storage": [
     {"name":"accuratetime.app.js","url":"app.js"},
-    {"name":"calculator.img","url":"calculator-icon.js","evaluate":true}
+    {"name":"accuratetime.img","url":"accuratetime-icon.js","evaluate":true}
   ]
 }

@@ -7,7 +7,21 @@
  */
 
 g.clear();
-require("Font7x11Numeric7Seg").add(Graphics);
+
+Bangle.http("https://worldtimeapi.org/api/timezone/Etc/UTC")
+  .then((data) => {
+    require("Storage")
+      .open("accuratetimedebug.log", "a")
+      .write(`${JSON.stringify(data)}\n`);
+  })
+  .catch((error) => {
+    require("Storage")
+      .open("accuratetimedebug.log", "a")
+      .write(`Error: ${error}\n`);
+  });
+
+
+/*require("Font7x11Numeric7Seg").add(Graphics);
 
 function getTimeDifference() {
   const startTime = new Date(); // Get the current time before making the API request
@@ -42,7 +56,7 @@ function getTimeDifference() {
     });
 }
 
-getTimeDifference();
+getTimeDifference();*/
 
 Bangle.setUI({
   mode: "custom",

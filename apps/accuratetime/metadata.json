@@ -2,15 +2,17 @@
   "id": "accuratetime",
   "name": "Accurate Time",
   "shortName": "acctime",
-  "version": "0.01",
+  "version": "0.02",
   "description": "Set time accurately via gadgetbirdge.",
   "icon": "accuratetime.png",
   "screenshots": [{"url":"screenshot_accuratetime.png"}],
   "tags": "app,tool",
   "supports": ["BANGLEJS2"],
+  "interface": "interface.html",
   "readme": "README.md",
   "storage": [
     {"name":"accuratetime.app.js","url":"app.js"},
     {"name":"accuratetime.img","url":"accuratetime-icon.js","evaluate":true}
-  ]
+  ],
+  "data": [{"name":"accuratetimedebug.log"}]
 }

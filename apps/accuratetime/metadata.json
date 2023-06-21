@@ -2,7 +2,7 @@
   "id": "accuratetime",
   "name": "Accurate Time",
   "shortName": "acctime",
-  "version": "0.02",
+  "version": "0.03",
   "description": "Set time accurately via gadgetbirdge.",
   "icon": "accuratetime.png",
   "screenshots": [{"url":"screenshot_accuratetime.png"}],

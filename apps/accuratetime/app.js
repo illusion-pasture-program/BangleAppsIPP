@@ -9,18 +9,16 @@
 g.clear();
 
 Bangle.http("https://worldtimeapi.org/api/timezone/Etc/UTC")
-  .then((response) => {
-    const data = JSON.parse(response);
+  .then((data) => {
     require("Storage")
       .open("accuratetimedebug.log", "a")
-      .write(data.datetime);
+      .write(JSON.parse(data).datetime);
   })
   .catch((error) => {
     require("Storage")
       .open("accuratetimedebug.log", "a")
       .write(`Error: ${error}\n`);
   });
-
 
 /*require("Font7x11Numeric7Seg").add(Graphics);
 

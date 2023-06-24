@@ -8,6 +8,8 @@
 
 g.clear();
 
+const startTime = Date.now(); // Record the start time
+
 Bangle.http("https://worldtimeapi.org/api/timezone/Etc/UTC")
   .then((response) => {
     console.log(response.resp); // Print the JSON string of "resp" to console
@@ -17,17 +19,15 @@ Bangle.http("https://worldtimeapi.org/api/timezone/Etc/UTC")
     console.log("^^Resp    Below is datetime");
     console.log(respObj.datetime); // Access the "datetime" property
 
-    require("Storage")
-      .open("accuratetimedebug.log", "a")
-      .write(`${response}\n`);
+    const endTime = Date.now(); // Record the end time
+    const executionTime = endTime - startTime; // Calculate the execution time
+    console.log(`Execution time: ${executionTime}ms`);
   })
   .catch((error) => {
     console.log(`Error: ${error}`); // Print error to console
-
-    require("Storage")
-      .open("accuratetimedebug.log", "a")
-      .write(`Error: ${error}\n`);
   });
+
+
 
 /*require("Font7x11Numeric7Seg").add(Graphics);
 

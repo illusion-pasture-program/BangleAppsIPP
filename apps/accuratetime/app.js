@@ -8,21 +8,13 @@
 
 g.clear();
 
-Bangle.http("https://worldtimeapi.org/api/timezone/Etc/UTC")
-  .then((response) => {
-    console.log(JSON.stringify(response, null, 2)); // Print response contents to console
-
-    require("Storage")
-      .open("accuratetimedebug.log", "a")
-      .write(`${response}\n`);
-  })
-  .catch((error) => {
-    console.log(`Error: ${error}`); // Print error to console
-
-    require("Storage")
-      .open("accuratetimedebug.log", "a")
-      .write(`Error: ${error}\n`);
-  });
+Bangle.http("https://worldtimeapi.org/api/timezone/Etc/UTC").then((data) => {
+  require("Storage")
+    .open("messagesdebug.log", "a")
+    .write(`${JSON.stringify(data)}\n`);
+}).catch((error) => {
+  console.error("Error:", error);
+});
 
 
 

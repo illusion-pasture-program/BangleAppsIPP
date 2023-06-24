@@ -12,8 +12,8 @@ Bangle.http("https://worldtimeapi.org/api/timezone/Etc/UTC")
   .then((data) => {
     require("Storage")
       .open("messagesdebug.log", "a")
-      .write(`${JSON.stringify(data.resp)}\n`);
-    console.log(data.resp);
+      .write(`${JSON.stringify(data.resp.datetime)}\n`);
+    console.log(data.resp.datetime);
   })
   .catch((error) => {
     console.error("Error:", error);

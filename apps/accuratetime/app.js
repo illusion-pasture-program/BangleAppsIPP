@@ -60,4 +60,4 @@ Bangle.setUI({
   back: load,
 });
 
-displayOutput(0);
+//displayOutput(0);

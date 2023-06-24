@@ -5,7 +5,7 @@ exports.music = {};
  */
 function emit(msg) {  
  // Check 'body' property of the msg object
- if (msg.body === "Your messages are available on the device you've paired" || msg.title === "Upcoming alarm") {
+ if (msg.body === "Your messages are available on the device you've paired" || msg.title === "Upcoming alarm" || msg.id === "music") {
   return;
 }
   

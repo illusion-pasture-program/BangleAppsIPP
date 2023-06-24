@@ -8,3 +8,4 @@
 0.08: new object logging code.
 0.09: reverting to initial version od debugging.
 0.10: removing undefined function call at the end of code.
+0.11: added console log statement 

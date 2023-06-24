@@ -8,15 +8,16 @@
 
 g.clear();
 
-Bangle.http("https://worldtimeapi.org/api/timezone/Etc/UTC").then((data) => {
-  require("Storage")
-    .open("messagesdebug.log", "a")
-    .write(`${JSON.stringify(data)}\n`);
-}).catch((error) => {
-  console.error("Error:", error);
-});
-
-
+Bangle.http("https://worldtimeapi.org/api/timezone/Etc/UTC")
+  .then((data) => {
+    require("Storage")
+      .open("messagesdebug.log", "a")
+      .write(`${JSON.stringify(data)}\n`);
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
 
 /*require("Font7x11Numeric7Seg").add(Graphics);
 

@@ -9,14 +9,24 @@
 g.clear();
 
 Bangle.http("https://worldtimeapi.org/api/timezone/Etc/UTC")
-  .then((data) => {
+  .then((response) => {
+    console.log(response.resp); // Print the JSON string of "resp" to console
+
+    // Parse the JSON string into a JavaScript object
+    const respObj = JSON.parse(response.resp);
+    console.log("^^Resp    Below is datetime");
+    console.log(respObj.datetime); // Access the "datetime" property
+
     require("Storage")
-      .open("messagesdebug.log", "a")
-      .write(`${JSON.stringify(data.resp.datetime)}\n`);
-    console.log(data.resp.datetime);
+      .open("accuratetimedebug.log", "a")
+      .write(`${response}\n`);
   })
   .catch((error) => {
-    console.error("Error:", error);
+    console.log(`Error: ${error}`); // Print error to console
+
+    require("Storage")
+      .open("accuratetimedebug.log", "a")
+      .write(`Error: ${error}\n`);
   });
 
 /*require("Font7x11Numeric7Seg").add(Graphics);

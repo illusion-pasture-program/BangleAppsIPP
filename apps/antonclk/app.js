@@ -221,13 +221,13 @@ const bibleVerses = [
     const seconds = date.getSeconds();
     const formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
     g.setFont("DSEG7ClassicBoldMed");
-    g.drawString(formattedSeconds, 157, 33);
+    g.drawString(formattedSeconds, 157, 39);
 
     // Draw day of month
     const dayOfMonth = date.getDate();
     const formattedDayOfMonth = dayOfMonth < 10 ? "0" + dayOfMonth : dayOfMonth;
     g.setFont("DSEG7ClassicBoldSmall");
-    g.drawString(formattedDayOfMonth, 15, 46);
+    g.drawString(formattedDayOfMonth, 16, 46);
 
     // Queue next draw after one second
     if (drawTimeout) clearTimeout(drawTimeout);

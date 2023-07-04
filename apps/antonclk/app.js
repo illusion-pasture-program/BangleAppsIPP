@@ -206,18 +206,18 @@ const bibleVerses = [
 
     // Draw time string in hours and minutes
     g.setFont("DSEG7ClassicBold");
-    g.setFontAlign(0, -1).drawString(timeStr, 64, 30);
+    g.setFontAlign(0, -1).drawString(timeStr, 75, 30);
 
     // Draw seconds string
     const seconds = date.getSeconds();
     const formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
     g.setFont("DSEG7ClassicBoldSmall");
-    g.drawString(formattedSeconds, 138, 49);
+    g.drawString(formattedSeconds, 149, 49);
 
     // Draw day of month
     const dayOfMonth = date.getDate();
     const formattedDayOfMonth = dayOfMonth < 10 ? "0" + dayOfMonth : dayOfMonth;    
-    g.drawString(formattedDayOfMonth, 138, 30);
+    g.drawString(formattedDayOfMonth, 149, 30);
 
     // Queue next draw after one second
     if (drawTimeout) clearTimeout(drawTimeout);

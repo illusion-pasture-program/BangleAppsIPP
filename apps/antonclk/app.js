@@ -202,22 +202,27 @@ const bibleVerses = [
     g.clearRect(0,24,176,72); //Just clear the time. Makes it so the text generation logic only needs to run every hour.    
 
     const date = new Date();
-    const timeStr = require("locale").time(date, 1); // Get current time
+    
+    const hours = date.getHours();
+    const formattedHours = hours < 10 ? "0" + hours : hours;
+    
+    const minutes = date.getMinutes();
+    const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
 
     // Draw time string in hours and minutes
     g.setFont("DSEG7ClassicBold");
-    g.setFontAlign(0, -1).drawString(timeStr, 75, 30);
+    g.setFontAlign(0, -1).drawString(`${formattedHours}${formattedMinutes}`, 75, 30);
 
     // Draw seconds string
     const seconds = date.getSeconds();
     const formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
     g.setFont("DSEG7ClassicBoldSmall");
-    g.drawString(formattedSeconds, 149, 49);
+    g.drawString(formattedSeconds, 142, 49);
 
     // Draw day of month
     const dayOfMonth = date.getDate();
     const formattedDayOfMonth = dayOfMonth < 10 ? "0" + dayOfMonth : dayOfMonth;    
-    g.drawString(formattedDayOfMonth, 149, 30);
+    g.drawString(formattedDayOfMonth, 142, 30);
 
     // Queue next draw after one second
     if (drawTimeout) clearTimeout(drawTimeout);
